@@ -1,4 +1,4 @@
-```jsx
+
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -11,6 +11,7 @@ function CartItem() {
 
   const cartItems = useSelector((state) => state.cart.items);
 
+  // Increase quantity
   const handleIncrease = (item) => {
     dispatch(
       updateQuantity({
@@ -20,6 +21,7 @@ function CartItem() {
     );
   };
 
+  // Decrease quantity
   const handleDecrease = (item) => {
     if (item.quantity > 1) {
       dispatch(
@@ -31,19 +33,26 @@ function CartItem() {
     }
   };
 
-  const handleRemove = (id) => {
+  // Delete item from cart
+  const handleDelete = (id) => {
     dispatch(removeItem(id));
   };
 
-  const totalQuantity = cartItems.reduce(
-    (total, item) => total + item.quantity,
-    0
-  );
+  // Calculate total cart amount
+  const calculateTotalAmount = () => {
+    return cartItems.reduce(
+      (total, item) => total + item.price * item.quantity,
+      0
+    );
+  };
 
-  const totalPrice = cartItems.reduce(
-    (total, item) => total + item.price * item.quantity,
-    0
-  );
+  // Calculate total number of items
+  const calculateTotalQuantity = () => {
+    return cartItems.reduce(
+      (total, item) => total + item.quantity,
+      0
+    );
+  };
 
   return (
     <div className="cart-page">
@@ -62,6 +71,8 @@ function CartItem() {
           <div className="cart-items">
             {cartItems.map((item) => (
               <div className="cart-item" key={item.id}>
+
+                {/* Plant Image */}
                 <img
                   src={item.image}
                   alt={item.name}
@@ -69,15 +80,21 @@ function CartItem() {
                 />
 
                 <div className="cart-item-details">
+
+                  {/* Plant Name */}
                   <h2>{item.name}</h2>
 
+                  {/* Plant Description */}
                   <p>{item.description}</p>
 
+                  {/* Plant Price */}
                   <p className="item-price">
                     Price: ${item.price.toFixed(2)}
                   </p>
 
+                  {/* Quantity Controls */}
                   <div className="quantity-controls">
+
                     <button
                       onClick={() => handleDecrease(item)}
                       disabled={item.quantity <= 1}
@@ -92,34 +109,42 @@ function CartItem() {
                     >
                       +
                     </button>
+
                   </div>
 
-                  <p>
-                    Subtotal: $
+                  {/* Item Total */}
+                  <p className="item-total">
+                    Total: $
                     {(item.price * item.quantity).toFixed(2)}
                   </p>
 
+                  {/* Delete Button */}
                   <button
-                    onClick={() => handleRemove(item.id)}
-                    className="remove-button"
+                    onClick={() => handleDelete(item.id)}
+                    className="delete-button"
                   >
-                    Remove
+                    Delete
                   </button>
+
                 </div>
               </div>
             ))}
           </div>
 
+          {/* Cart Summary */}
           <div className="cart-summary">
             <h2>Cart Summary</h2>
 
             <p>
-              Total Items: <strong>{totalQuantity}</strong>
+              Total Items:{" "}
+              <strong>{calculateTotalQuantity()}</strong>
             </p>
 
             <p>
-              Total Price:{" "}
-              <strong>${totalPrice.toFixed(2)}</strong>
+              Total Amount:{" "}
+              <strong>
+                ${calculateTotalAmount().toFixed(2)}
+              </strong>
             </p>
 
             <button className="checkout-button">
@@ -133,4 +158,4 @@ function CartItem() {
 }
 
 export default CartItem;
-```
+
