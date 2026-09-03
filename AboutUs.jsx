@@ -1,52 +1,47 @@
-```jsx
+
 import React from "react";
 
-const AboutUs = () => {
+function AboutUs() {
   return (
-    <div className="about-us">
+    <div className="about-us-container">
       <h1>About Paradise Nursery</h1>
 
       <p>
-        Welcome to Paradise Nursery, your online destination for beautiful
-        and healthy plants. We are passionate about bringing nature closer
-        to your home and making plant shopping simple and enjoyable.
-      </p>
-
-      <h2>Who We Are</h2>
-
-      <p>
-        Paradise Nursery is an online plant shop offering a wide variety of
-        indoor and outdoor plants. Our goal is to provide high-quality plants
-        along with a convenient and user-friendly shopping experience.
+        Welcome to Paradise Nursery, your trusted online destination for
+        beautiful and healthy plants. We provide a wide variety of indoor and
+        outdoor plants to help you create a greener and more peaceful
+        environment.
       </p>
 
       <h2>Our Mission</h2>
 
       <p>
-        Our mission is to help people create greener and healthier living
-        spaces by making it easy to discover, select, and purchase plants
-        online.
+        Our mission is to make it easy for everyone to bring nature into their
+        homes and workplaces. We aim to provide high-quality plants at
+        affordable prices while offering a simple, convenient, and enjoyable
+        online shopping experience.
       </p>
 
-      <h2>Why Choose Us?</h2>
-
-      <ul>
-        <li>Wide variety of plants</li>
-        <li>High-quality and healthy plants</li>
-        <li>Easy online shopping experience</li>
-        <li>Affordable prices</li>
-        <li>Simple and convenient shopping cart</li>
-      </ul>
-
-      <h2>Our Vision</h2>
+      <h2>Our Services</h2>
 
       <p>
-        We envision a greener world where everyone can enjoy the beauty and
-        benefits of plants in their homes and workplaces.
+        Paradise Nursery offers a wide selection of indoor and outdoor plants,
+        including flowering plants, succulents, air-purifying plants, and
+        decorative plants. Customers can browse our plant collection, view
+        plant information and prices, add plants to their shopping cart, and
+        manage their orders easily.
+      </p>
+
+      <h2>Why Choose Paradise Nursery?</h2>
+
+      <p>
+        We focus on providing healthy plants, affordable prices, convenient
+        online shopping, and a user-friendly experience. Our goal is to help
+        customers find the perfect plants for their homes, offices, and
+        gardens.
       </p>
     </div>
   );
-};
+}
 
 export default AboutUs;
-```
