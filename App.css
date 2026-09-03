@@ -1,0 +1,77 @@
+```css
+/* Paradise Nursery - App Styles */
+
+/* Main application */
+.App {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* Paradise Nursery Landing Page */
+.landing-page {
+  min-height: 100vh;
+  width: 100%;
+  background-image: url("/images/plant-background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Landing page content */
+.landing-content {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 40px;
+  border-radius: 15px;
+  max-width: 650px;
+  margin: 20px;
+}
+
+/* Project title */
+.landing-content h1 {
+  font-size: 42px;
+  margin-bottom: 15px;
+}
+
+/* Description */
+.landing-content p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Shop button */
+.shop-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* General page styling */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .landing-content h1 {
+    font-size: 32px;
+  }
+
+  .landing-content p {
+    font-size: 16px;
+  }
+
+  .landing-content {
+    padding: 25px;
+  }
+}
+```
